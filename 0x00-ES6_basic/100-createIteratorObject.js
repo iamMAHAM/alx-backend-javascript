@@ -1,7 +1,9 @@
 export default function createIteratorObject(report) {
-  const inter = [];
-  for (const [k, v] of Object.entries(report)) {
-    if (v instanceof Array) inter.push(...v);
-  }
-  return inter;
+  return (function* _() {
+    for (const department of Object.values(report.allEmployees)) {
+      for (const employee of department) {
+        yield employee;
+      }
+    }
+  })();
 }
