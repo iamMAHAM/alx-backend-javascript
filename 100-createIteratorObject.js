@@ -1,9 +1,7 @@
 export default function createIteratorObject(report) {
-  return [
-    ...Object.values(report).map((emp) => {
-      if (emp instanceof Array) {
-        return [...emp];
-      }
-    }),
-  ];
+  const inter = [];
+  for (const [k, v] of Object.entries(report)) {
+    if (v instanceof Array) inter.push(...v);
+  }
+  return inter;
 }
