@@ -1,9 +1,8 @@
 export default function createIteratorObject(report) {
-  return (function* _() {
-    for (const department of Object.values(report.allEmployees)) {
-      for (const employee of department) {
-        yield employee;
-      }
-    }
-  })();
+  const inter = [];
+  // eslint-disable-next-line
+  for (const [k, v] of Object.entries(report)) {
+    if (v instanceof Array) inter.push(...v);
+  }
+  return inter;
 }
