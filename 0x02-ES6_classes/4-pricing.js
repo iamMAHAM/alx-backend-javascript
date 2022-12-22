@@ -1,7 +1,7 @@
 /* eslint no-underscore-dangle: 0 */
 import Currency from './3-currency';
 
-export default class Current {
+export default class Pricing {
   constructor(amount, currency) {
     if (typeof amount !== 'number') {
       throw TypeError('Amount must be a number');
