@@ -38,4 +38,14 @@ export default class Current {
   displayFullCurrency() {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
+
+  static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') {
+      throw TypeError('amount must be a number');
+    }
+    if (typeof conversionRate !== 'number') {
+      throw TypeError('ConversionRate must be a number');
+    }
+    return amount * conversionRate;
+  }
 }
