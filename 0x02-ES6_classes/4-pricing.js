@@ -34,10 +34,21 @@ export default class Pricing {
     }
     this._currency = currency;
   }
+  /**
+   *
+   * @returns a full currency
+   */
 
   displayFullCurrency() {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
+
+  /**
+   *
+   * @param {*} amount
+   * @param {*} conversionRate
+   * @returns amount  * convertionRate
+   */
 
   static convertPrice(amount, conversionRate) {
     if (typeof amount !== 'number') {
