@@ -1,5 +1,5 @@
 /* eslint no-underscore-dangle: 0 */
-export default class Current {
+export default class Currency {
   constructor(code, name) {
     if (typeof code !== 'string' || typeof name !== 'string') {
       throw TypeError('Name or Code must be a string');
