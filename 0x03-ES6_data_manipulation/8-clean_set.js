@@ -2,7 +2,7 @@ function cleanSet(set, startString) {
   if (
     !startString
     || typeof startString !== 'string'
-    || typeof set !== 'object'
+    || !(set instanceof Set)
   ) return '';
 
   const cleaned = [];
