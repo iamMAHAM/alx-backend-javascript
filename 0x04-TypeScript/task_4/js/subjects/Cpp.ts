@@ -2,7 +2,7 @@
 
 namespace Subjects {
   export interface Teacher {
-    experienceTeaching: number;
+    experienceTeachingC: number;
   }
 
   export class Cpp extends Subjects {
@@ -11,7 +11,7 @@ namespace Subjects {
     }
 
     getAvailableTeacher() {
-      return this.teacher.experienceTeaching > 0
+      return this.teacher.experienceTeachingC > 0
         ? `Available Teacher: ${this.teacher.firstName}`
         : 'No available teacher';
     }
