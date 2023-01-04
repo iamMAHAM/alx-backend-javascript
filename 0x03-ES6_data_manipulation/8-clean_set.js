@@ -1,14 +1,18 @@
 function cleanSet(set, startString) {
-  let clean = '';
+  if (
+    !startString
+    || typeof startString !== 'string'
+    || typeof set !== 'object'
+  ) return '';
+
+  const cleaned = [];
   for (const item of set) {
-    if (startString) {
-      if (item.startsWith(startString)) {
-        clean += `${item.replace(startString, '').trim()}-`;
-      }
+    if (item.startsWith(startString)) {
+      cleaned.push(item.replace(startString, ''));
     }
   }
 
-  return clean.slice(0, clean.length - 1);
+  return cleaned.join('-');
 }
 
 export default cleanSet;
