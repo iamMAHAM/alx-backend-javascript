@@ -48,11 +48,11 @@ function createEmployee(salary: string | number): Director | Teacher {
   return new Director();
 }
 
-function isDirector(employee: unknown) {
+function isDirector(employee: Teacher | Director): employee is Director {
   return employee instanceof Director;
 }
 
-function executeWork(employee: unknown) {
+function executeWork(employee: Teacher | Director) {
   return isDirector(employee)
     ? new Director().workDirectoryTasks()
     : employee instanceof Teacher
